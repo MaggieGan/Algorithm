@@ -326,11 +326,48 @@ public class exercise11
 		
 	}
 	
+	public static int rank(int key, int[] a)
+	{ 
+		return rank(key, a, 0, a.length - 1,0); 
+	}
+	
+	public static int rank(int key, int[] a, int lo, int hi, int depth)
+	{
+		//output
+		for (int i=0; i<depth; i++)
+			StdOut.print(" ");
+		//print information about lo and hi
+		StdOut.printf("lo:%d, hi:%d\n",lo,hi);
+		
+		//rank
+		if (lo > hi) return -1;
+		int mid = lo + (hi - lo)/2;
+		if (key < a[mid]) return rank(key, a, lo, mid-1,++depth);
+		else if (key > a[mid]) return rank(key, a, mid+1, hi,++depth);
+		else return mid;		
+		
+	}
+	
+	public static void exercise1122()
+	{
+		int[] a = new int[10];
+		
+		Random random = new Random();
+		for (int i=0; i<10; i++)
+		{
+			a[i] = random.nextInt(100);
+			StdOut.print(a[i] + " ");
+		}
+		StdOut.println();
+		rank(10,a);
+		
+	}
+	
+	
 	public static void main(String[] args)
 	{
 
-		exercise1121();
-	
+		exercise1122();
 	
 	}
 	
