@@ -8,8 +8,7 @@
 
 import java.lang.Math;
 import java.util.Random;
-import java.util.list;
-import java.util.ArrayList;
+
 
 public class exercise11
 {
@@ -307,20 +306,20 @@ public class exercise11
 	}		
 	
 	
-	public static void exercise1121(int M)
+	public static void exercise1121()
 	{	
 		StdOut.println("please input your name and two integers followed by a newline");
 		
 		
-		String nmae = null;
+		String name = null;
 		int first,second;
 		
-		if (StdIn.hasNextLine())
+		if (StdIn.hasNextLine()) // if use while , how to terminate?
 		{
 			name = StdIn.readString();
 			first = StdIn.readInt();
 			second = StdIn.readInt();
-			StdOut.printf("%-10s|%-10d|%-10d|%-10.3f", name, first, second, (first*1.0)/second);
+			StdOut.printf("%-10s|%-10d|%-10d|%-10.3f\n", name, first, second, (first*1.0)/second);
 		}
 		
 		StdOut.println();
